@@ -22,7 +22,7 @@ bg-opacity-50 dark:bg-opacity-80"
 
   <p className=" text-base md:text-lg mb-8 text-center">
     Welcome to <span className="font-semibold text-[#274370] dark:text-[#a4c7f7]">Programmers Discussion Hub</span>, your one-stop hub for programming enthusiasts!
-    Whether you're a beginner exploring JavaScript or a seasoned developer tackling Rust, our platform is designed to support your learning and collaboration journey.
+    Whether you are a beginner exploring JavaScript or a seasoned developer tackling Rust, our platform is designed to support your learning and collaboration journey.
   </p>
 
   <h2 className=" text-xl lg:text-2xl font-semibold mb-4">What We Offer</h2>
@@ -35,7 +35,7 @@ bg-opacity-50 dark:bg-opacity-80"
 
   <h2 className=" text-xl lg:text-2xl font-semibold mb-4">Why We Built This</h2>
   <p className=" md:text-base mb-8">
-    We believe in <span className="font-semibold">collaborative learning</span>. Coding shouldn't be a lonely road.
+    We believe in <span className="font-semibold">collaborative learning</span>. Coding should not be a lonely road.
     By bringing together students, professionals, and hobbyists, we aim to create a supportive and engaging space to help you level up — one conversation at a time.
   </p>
 

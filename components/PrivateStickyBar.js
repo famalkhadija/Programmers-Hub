@@ -20,7 +20,7 @@ const { searchQuery } = useSearch();
 
     const q = query(
       collection(db, 'privateGroups'),
-      where('members', 'array-contains', session.user.email)
+      where('members', 'array-contains', session?.user?.email)
     );
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -77,10 +77,6 @@ router.push(`/private/${encodeURIComponent(data.groupId)}`);
     alert("Failed to create discussion. Please try again.");
   }
 };
-
-
-
-
   return (
     <>
     <div className="hidden md:block scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent h-[calc(100vh-8.5vh)] border xl:w-[21%] lg:w-[25%] md:w-[30%] w-full dark:bg-gray-900 dark:border-blue-400 p-2 sm:p-4 overflow-y-auto dark:text-white">

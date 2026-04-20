@@ -11,6 +11,7 @@ const signup = () => {
   const [captcha, setCaptcha] = useState(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState('');
+  const { data: session } = useSession();
   const [nameInput, setNameInput] = useState("");
   const handleCaptcha = (value) => {
     setCaptcha(value);
@@ -62,7 +63,6 @@ if (res2?.ok) {
 }
 
 };
-  const { data: session } = useSession();
   if (session) {
     return (
       <>
@@ -79,7 +79,7 @@ if (res2?.ok) {
       <div className="dark:text-white dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#a69bc4_100%)] lg:w-[770px] sm:w-[400px]  w-[320px] flex mx-auto  rounded-xl border border-gray-300">
         <div className="login-card sm:px-8 pt-8 py-3 flex flex-col items-center ">
           <h1 className="text-2xl font-bold">Welcome!</h1>
-          <div className=" text-gray-500">Let's create your account</div>
+          <div className=" text-gray-500">Let&apos;s create your account</div>
           <div>
             <div className="mt-4">Enter Your Name</div>
 

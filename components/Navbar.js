@@ -11,11 +11,11 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
-  
   const { resolvedTheme, setTheme } = useTheme();
-  
   const [mounted, setMounted] = useState(false);
-
+  const router = useRouter();
+  const { searchQuery, setSearchQuery } = useSearch(); 
+  
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -23,8 +23,6 @@ const toggleTheme = () => {
   setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
 };
 
-  const { searchQuery, setSearchQuery } = useSearch(); 
-  const router = useRouter();
 
 const handleKeyDown = async (e) => {
   if (e.key === 'Enter' && searchQuery.trim() !== '') {

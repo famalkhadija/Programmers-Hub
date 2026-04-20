@@ -34,8 +34,8 @@ bg-opacity-50 dark:bg-opacity-80"
                 Welcome to the ultimate playground for coders — where ideas
                 spark, bugs vanish, and knowledge grows with every line of code.
                 Join passionate developers, share what you know, ask what you
-                don't, and level up your skills in a community that codes
-                together and grows together. Whether you're a beginner or a
+                don&apos;t, and level up your skills in a community that codes
+                together and grows together. Whether you&apos;re a beginner or a
                 seasoned pro, this is your space to learn, teach, and tackle
                 challenges together. Dive into discussions, solve quizzes, and
                 collaborate on real code — all in one hub
