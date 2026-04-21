@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <head>
 </head>
   <body
-    className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${poppins.variable}antialiased`}
+
   >
     <SessionWrapper>
     <ThemeProvider>
