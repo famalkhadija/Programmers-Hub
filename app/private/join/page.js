@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import JoinClient from "./JoinClient";
+import JoinClient from "@/components/JoinClient";
 
 export default function Page() {
   return (
