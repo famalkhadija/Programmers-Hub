@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -18,7 +18,7 @@ export async function POST(req) {
       `,
     });
     // ✅ Log message to server instead of sending email
-    console.log("📩 New Contact Message Received:");
+    console.log(" New Contact Message Received:");
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Phone:", phone);
