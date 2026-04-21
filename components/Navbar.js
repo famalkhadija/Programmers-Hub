@@ -62,7 +62,7 @@ const handleKeyDown = async (e) => {
   <Link href="/" className=" flex items-center ">
     <img src="/logo.jpg" className=" mx-3 sm:h-12 h-9 dark:hidden" alt="pdh Logo" />
     <span className="hidden text-sm sm:block dark:block sm:text-xl font-bold dark:text-white">
-      <span className=" dark:hidden font-semibold font-poppins">&lt;/&gt;</span> Discuss Hub
+      <span className=" dark:hidden font-semibold font-poppins">&lt;/&gt;</span> Discussion Hub
     </span>
   </Link>
 {/* Desktop Nav Links */}
