@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 import { db } from "@/lib/firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-const signup = () => {
+const Signup = () => {
   const [captcha, setCaptcha] = useState(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState('');
@@ -160,4 +160,4 @@ if (res2?.ok) {
   );
 };
 
-export default signup;
+export default Signup;

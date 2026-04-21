@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-const contact = () => {
+const Contact = () => {
   const [captcha, setCaptcha] = useState(null);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -132,4 +132,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
