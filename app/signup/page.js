@@ -104,7 +104,7 @@ if (res2?.ok) {
           /> */}
           <button
             onClick={handleContinue}
-            disabled={!captcha}
+            // disabled={!captcha}
             className={`w-60 sm:w-80 py-2 rounded-lg text-white ${
               captcha ? "bg-slate-900 hover:bg-slate-950" : "bg-slate-400 "
             }`}
