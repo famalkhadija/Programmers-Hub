@@ -88,7 +88,7 @@ const Login = () => {
             onClick={handleContinue}
             className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-500 hover:bg-slate-400 my-3" 
           >
-            Continue
+            Continuee
           </button>
           {message && <p className="mt-4 text-gray-500">{message}</p>}
           <div className="w-[80%] flex items-center gap-4 mt-4">
