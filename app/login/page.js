@@ -4,42 +4,17 @@ import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import ReCAPTCHA from "react-google-recaptcha";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 const Login = () => {
-  const [captcha, setCaptcha] = useState(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [nameInput, setNameInput] = useState("");
-
-  const handleCaptcha = (value) => {
-    setCaptcha(value);
-  };
-
   const handleContinue = async (e) => {
     e.preventDefault();
     if (!email || !nameInput.trim()) {
       alert("Please enter your name and email.");
-      return;
-    }
-
-    if (!captcha) {
-      alert("Please complete the CAPTCHA.");
-      return;
-    }
-
-    const res = await fetch("/api/verify-captcha", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token: captcha }),
-    });
-
-    const data = await res.json();
-
-    if (!data.success) {
-      alert("CAPTCHA verification failed.");
       return;
     }
     try {
@@ -109,17 +84,9 @@ const Login = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <ReCAPTCHA
-            className="my-4 mx-2"
-            sitekey="6LcAFFArAAAAANFnal7x_A_SCjKi6kZbkYDUY2WJ"
-            onChange={handleCaptcha}
-          />
           <button
             onClick={handleContinue}
-            disabled={!captcha}
-            className={`w-60 sm:w-80 py-2 rounded-lg text-white ${
-              captcha ? "bg-slate-500 hover:bg-slate-400" : "bg-slate-400 "
-            }`}
+            className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-500 hover:bg-slate-400" 
           >
             Continue
           </button>

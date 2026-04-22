@@ -18,12 +18,10 @@ const Signup = () => {
   };
 const handleContinue = async (e) => {
   e.preventDefault();
-
   if (!email || !nameInput.trim()) {
     alert("Please enter your name and email.");
     return;
   }
-
   if (!captcha) {
     alert("Please complete the CAPTCHA.");
     return;
@@ -101,7 +99,7 @@ if (res2?.ok) {
           </div>
           <ReCAPTCHA
             className="my-4 mx-2"
-            sitekey="6LcAFFArAAAAANFnal7x_A_SCjKi6kZbkYDUY2WJ"
+            sitekey={process.env.RECAPTCHA_SITE_KEY}
             onChange={handleCaptcha}
           />
           <button
