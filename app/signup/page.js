@@ -99,7 +99,7 @@ if (res2?.ok) {
           </div>
           <ReCAPTCHA
             className="my-4 mx-2"
-            sitekey={process.env.RECAPTCHA_SITE_KEY}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
             onChange={handleCaptcha}
           />
           <button
