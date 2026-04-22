@@ -8,6 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { db } from "@/lib/firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 const Signup = () => {
+  console.log(process.env.EMAIL_SERVER_USER)
   const [captcha, setCaptcha] = useState(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState('');
