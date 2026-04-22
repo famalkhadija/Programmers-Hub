@@ -22,22 +22,22 @@ const handleContinue = async (e) => {
     alert("Please enter your name and email.");
     return;
   }
-  // if (!captcha) {
-  //   alert("Please complete the CAPTCHA.");
-  //   return;
-  // }
-  // const res = await fetch("/api/verify-captcha", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ token: captcha }),
-  // });
+  if (!captcha) {
+    alert("Please complete the CAPTCHA.");
+    return;
+  }
+  const res = await fetch("/api/verify-captcha", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token: captcha }),
+  });
 
-  // const data = await res.json();
+  const data = await res.json();
 
-  // if (!data.success) {
-  //   alert("CAPTCHA verification failed.");
-  //   return;
-  // }
+  if (!data.success) {
+    alert("CAPTCHA verification failed.");
+    return;
+  }
   try {
     const userRef = doc(db, "users", email);
     await setDoc(userRef, {
@@ -97,14 +97,14 @@ if (res2?.ok) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          {/* <ReCAPTCHA
+          <ReCAPTCHA
             className="my-4 mx-2"
             sitekey="6Lda1MQsAAAAALuLJ1bvYmb4iHJgOs1J7KnQaM4l"
             onChange={handleCaptcha}
-          /> */}
+          />
           <button
             onClick={handleContinue}
-            // disabled={!captcha}
+            disabled={!captcha}
             className={`w-60 sm:w-80 py-2 rounded-lg text-white ${
               captcha ? "bg-slate-900 hover:bg-slate-950" : "bg-slate-400 "
             }`}
