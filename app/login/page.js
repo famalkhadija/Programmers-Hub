@@ -86,7 +86,7 @@ const Login = () => {
           </div>
           <button
             onClick={handleContinue}
-            className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-500 hover:bg-slate-400" 
+            className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-500 hover:bg-slate-400 my-3" 
           >
             Continue
           </button>
