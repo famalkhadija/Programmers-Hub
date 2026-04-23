@@ -106,19 +106,12 @@ if (res2?.ok) {
           <button
             onClick={handleContinue}
             disabled={!captcha}
-            className={`w-60 sm:w-80 py-2 rounded-lg text-white ${
-              captcha ? "bg-slate-900 hover:bg-slate-950" : "bg-slate-400 "
-            }`}
+            className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-900 "
           >
             Continue
           </button>
           {message && <p className="mt-4 text-gray-500">{message}</p>}
           <div className="w-[80%] flex items-center gap-4 mt-4">
-            <hr className="flex-grow border-gray-300" />
-            <span className="text-sm text-gray-500 whitespace-nowrap">
-              Or continue with
-            </span>
-            <hr className="flex-grow border-gray-300" />
           </div>
           <div className="text-sm my-4">
             {" "}
