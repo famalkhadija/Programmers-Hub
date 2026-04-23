@@ -120,25 +120,6 @@ if (res2?.ok) {
             </span>
             <hr className="flex-grow border-gray-300" />
           </div>
-
-          <button
-            onClick={() => {
-              signIn("github");
-            }}
-            className="flex items-center w-60 my-5 space-x-5 border border-gray-300 p-3"
-          >
-            <FaGithub className="w-6 h-6" />
-            <span>Sign in with Github</span>
-          </button>
-          <button
-            onClick={() => {
-              signIn("google");
-            }}
-            className="flex items-center w-60 space-x-5 border border-gray-300 p-3"
-          >
-            <FcGoogle className="w-6 h-6" />
-            <span>Sign in with Google</span>
-          </button>
           <div className="text-sm my-4">
             {" "}
             Already have an account?{" "}

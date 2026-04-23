@@ -88,7 +88,7 @@ const Login = () => {
             onClick={handleContinue}
             className="w-60 sm:w-80 py-2 rounded-lg text-white bg-slate-500 hover:bg-slate-400 my-3" 
           >
-            Continuee
+            Continue
           </button>
           {message && <p className="mt-4 text-gray-500">{message}</p>}
           <div className="w-[80%] flex items-center gap-4 mt-4">
@@ -98,16 +98,6 @@ const Login = () => {
             </span>
             <hr className="flex-grow border-gray-300" />
           </div>
-
-          <button
-            onClick={() => {
-              signIn("github");
-            }}
-            className="flex items-center w-60 my-5 space-x-5 border border-gray-300 p-3"
-          >
-            <FaGithub className="w-6 h-6" />
-            <span>Sign in with Github</span>
-          </button>
           <button
             onClick={() => {
               signIn("google");
