@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeWrapper";
 import SessionWrapper from "@/components/SessionWrapper";
 import ClientWrapper from '@/components/ClientWrapper';
+import { Analytics } from '@vercel/analytics/next';
 export const metadata = {
   title: "Programmers Discussion Hub",
   description: "discuss,solve problems and learn something new",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <Footer />
    </ThemeProvider>
    </SessionWrapper>
+   <Analytics />
   </body>
 </html>
 
