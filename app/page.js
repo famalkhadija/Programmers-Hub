@@ -41,7 +41,7 @@ bg-opacity-50 dark:bg-opacity-80"
                 collaborate on real code — all in one hub
               </p>
               <div className="pt-16 flex flex-wrap justify-center gap-4">
-                <a href="/signup">
+                <a href="/discussions">
                   <button className="
                   dark:bg-black 
                   dark:hover:bg-white hover:bg-white hover:text-black bg-slate-800 text-white shadow h-10 rounded-md px-8 ">
