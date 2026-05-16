@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
     .replace(/\b\w/g, (l) => l.toUpperCase());
 
   return {
-    title: `${groupName} | Programmers Discussion Hub`,
+    title: `${groupName} | Private Discussion | Programmers Discussion Hub`,
     description: `Discuss ${groupName} with other members`,
   };
 }
