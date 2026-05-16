@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://programmers-hub-hazel.vercel.app
+
+# Sitemaps
+Sitemap: https://programmers-hub-hazel.vercel.app/sitemap.xml
