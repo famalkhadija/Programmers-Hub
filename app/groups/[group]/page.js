@@ -20,13 +20,13 @@ import { FiCopy, FiCornerUpLeft } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import Link from "next/link";
- 
+
 export default function GroupPage() {
   const { data: session } = useSession();
   const currentUser = session?.user?.email || session?.user?.id;
   const params = useParams();
   const group = params?.group;
-  const groupName = params.group
+  const groupName = group
     .replace("plus", "+")
     .replace(/-/g, " ")
     .replace(/\b\w/g, (l) => l.toUpperCase());
@@ -49,39 +49,43 @@ export default function GroupPage() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-const slug = group?.toLowerCase().replace(/\+/g, "plus").replace(/\./g, "").replace(/\s/g, "");
+  const slug = group
+    ?.toLowerCase()
+    .replace(/\+/g, "plus")
+    .replace(/\./g, "")
+    .replace(/\s/g, "");
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const sendIcon = !mounted
-    ? "/send.png" 
+    ? "/send.png"
     : resolvedTheme === "dark"
-    ? "/send2.png"
-    : "/send.png";
+      ? "/send2.png"
+      : "/send.png";
 
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
     }
   }, [messages]);
-useEffect(() => {
-  if (!group) return;
+  useEffect(() => {
+    if (!group) return;
 
-  const messagesRef = collection(db, 'groups', group, 'messages');
-  const q = query(messagesRef, orderBy('timestamp', 'asc'));
+    const messagesRef = collection(db, "groups", group, "messages");
+    const q = query(messagesRef, orderBy("timestamp", "asc"));
 
-  const unsubscribe = onSnapshot(q, (snapshot) => {
-    const loadedMessages = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setMessages(loadedMessages);
-  });
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const loadedMessages = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setMessages(loadedMessages);
+    });
 
-  return () => unsubscribe();
-}, [group]);
+    return () => unsubscribe();
+  }, [group]);
   const handleSeen = async (msgId, sender) => {
     if (sender === currentUser) return;
     try {
@@ -110,29 +114,28 @@ useEffect(() => {
   //handlesend
   const handleSend = async () => {
     if (!session) {
-  alert("Login required to send messages");
-  return;
-}
+      alert("Login required to send messages");
+      return;
+    }
     if (!newMessage.trim()) return;
     if (!navigator.onLine) {
       setShowNoInternet(true);
       setTimeout(() => setShowNoInternet(false), 3000);
     }
     try {
-const msg = {
-  text: newMessage,
-  sender: currentUser,
-  senderName: session?.user?.name || "Anonymous", 
-  timestamp: serverTimestamp(),
-  status: "sent",
-  replyTo: replyTo ? replyTo.id : null,
-};
-
+      const msg = {
+        text: newMessage,
+        sender: currentUser,
+        senderName: session?.user?.name || "Anonymous",
+        timestamp: serverTimestamp(),
+        status: "sent",
+        replyTo: replyTo ? replyTo.id : null,
+      };
 
       await addDoc(messagesRef, msg);
 
       setNewMessage("");
-      if (replyTo) setReplyTo(null); 
+      if (replyTo) setReplyTo(null);
     } catch (err) {
       console.error("Error sending message:", err);
     }
@@ -140,7 +143,7 @@ const msg = {
   function onMessageRightClick(event, message) {
     event.preventDefault();
 
-    const menuHeight = 130; 
+    const menuHeight = 130;
     const menuWidth = 160;
 
     const windowHeight = window.innerHeight;
@@ -178,7 +181,7 @@ const msg = {
             handleSeen(msg.id, msg.sender);
           }
         },
-        { threshold: 1.0 }
+        { threshold: 1.0 },
       );
 
       observer.observe(ref.current);
@@ -205,6 +208,10 @@ const msg = {
 
     return (
       <>
+        <head>
+          <title>{groupName} Discussion | Programmers Discussion Hub</title>
+          <meta name="description" content={`Join ${groupName} discussions`} />
+        </head>
         {showNoInternet && (
           <div className="fixed top-0 left-0 right-0 bg-black text-white text-center py-2 z-50">
             No internet connection. Message not sent.
@@ -253,7 +260,7 @@ const msg = {
 
         <div
           ref={ref}
-          id={`msg-${msg.id}`} 
+          id={`msg-${msg.id}`}
           onContextMenu={(e) => onMessageRightClick(e, msg)}
           className={` transition-all duration-700 max-w-[50%] min-w-[130px] w-fit px-2 pt-2 pb-1 rounded-xl overflow-hidden 
           break-words whitespace-pre-wrap 
@@ -359,13 +366,13 @@ const msg = {
           </h1>
           <div className="flex md:gap-4 gap-2 px-2">
             <Link href={`/solveQuiz/${slug}`}>
-            <button
-              onClick={() => router.push("/solveQuiz")}
-              type="button"
-              className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold rounded-lg text-sm md:px-5  py-2.5 text-center me-2 mb-2 shadow-[1px_1px_4px_gray] hover:shadow-[1px_1px_8px_gray] md:w-fit w-20"
-            >
-              Solve Quiz
-            </button>
+              <button
+                onClick={() => router.push("/solveQuiz")}
+                type="button"
+                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold rounded-lg text-sm md:px-5  py-2.5 text-center me-2 mb-2 shadow-[1px_1px_4px_gray] hover:shadow-[1px_1px_8px_gray] md:w-fit w-20"
+              >
+                Solve Quiz
+              </button>
             </Link>
           </div>
         </div>

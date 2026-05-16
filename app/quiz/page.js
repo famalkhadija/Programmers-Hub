@@ -1,8 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { getMockQuiz } from '@/lib/mockQuizGenerator';
-import { useParams } from 'next/navigation';
-
 export default function QuizPage() {
   const [level, setLevel] = useState('easy');
   const [quiz, setQuiz] = useState([]);
@@ -30,6 +28,10 @@ export default function QuizPage() {
   const currentQuestions = quiz.slice(startIndex, endIndex);
   return (
     <>
+    <head>
+      <title>Quiz | Programmers Discussion Hub</title>
+      <meta name="description" content="Practice programming quizzes" />
+    </head>
     <div className='bg-white text-black dark:bg-[#2d2f3a] dark:text-white'>
     <div className="p-4 text-md xl:text-lg">
       <h1 className="text-xl md:text-2xl text-center font-bold mb-4">Quiz for {language}</h1>

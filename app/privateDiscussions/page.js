@@ -1,5 +1,9 @@
 import React from 'react'
 import PrivateStickyBar from '@/components/PrivateStickyBar'
+export const metadata = {
+  title: "Private Discussions | Programmers Discussion Hub",
+  description: "Join private programming discussions and groups",
+};
 const privateDiscussions = () => {
   return (
     <div>

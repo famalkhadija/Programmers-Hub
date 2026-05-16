@@ -74,6 +74,11 @@ if (res2?.ok) {
   }
 
   return (
+    <>
+    <head>
+      <title>Signup | Programmers Discussion Hub</title>
+      <meta name="description" content="Create an account to join programming discussions and features" />
+    </head>
     <div className="w-full pt-4 md:pt-8 pb-20 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#a69bc4_100%)] ">
       <div className="dark:text-white dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#a69bc4_100%)] lg:w-[770px] sm:w-[400px]  w-[320px] flex mx-auto  rounded-xl border border-gray-300">
         <div className="login-card sm:px-8 pt-8 py-3 flex flex-col items-center ">
@@ -107,7 +112,7 @@ if (res2?.ok) {
             onClick={handleContinue}
             disabled={!captcha}
             className="w-60 sm:w-80 py-2 rounded-lg text-white hover:bg-slate-500 bg-slate-400"
-          >
+            >
             Continue
           </button>
           {message && <p className="mt-4 text-gray-500">{message}</p>}
@@ -126,10 +131,11 @@ if (res2?.ok) {
             className="h-full object-cover rounded-tr-xl rounded-br-xl"
             src="/img2.jpg"
             alt="signup image"
-          />
+            />
         </div>
       </div>
     </div>
+            </>
   );
 };
 

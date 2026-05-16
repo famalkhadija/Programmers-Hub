@@ -57,6 +57,10 @@ const Contact = () => {
   };
   return (
     <>
+    <head>
+      <title>Contact | Programmers Discussion Hub</title>
+      <meta name="description" content="Contact us for questions, feedback, or collaboration opportunities" />
+    </head>
       <div className="dark:bg-[#2d2f3a] dark:text-white">
         <div className=" pt-6 flex flex-col mx-auto">
           <div className="w-80 flex flex-col gap-2 mx-auto text-center">

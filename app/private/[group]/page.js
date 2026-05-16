@@ -21,7 +21,6 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { db } from "@/lib/firebase";
 import InviteLinkBox from '@/components/InviteLinkBox';
-
 export default function GroupPage() {
   const { data: session } = useSession();
   const currentUser = session?.user?.email || session?.user?.id;
@@ -249,6 +248,10 @@ if (isAllowed === false) {
 
     return (
       <>
+      <head>
+        <title>{groupName} Discussion | Programmers Discussion Hub</title>
+        <meta name="description" content={`Join ${groupName} discussions`} />
+      </head>
         {showNoInternet && (
           <div className="fixed top-0 left-0 right-0 bg-black text-white text-center py-2 z-50">
             No internet connection. Message not sent.

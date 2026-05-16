@@ -1,5 +1,9 @@
 import React from 'react'
 import StickyBar from '@/components/StickyBar'
+export const metadata = {
+  title: "Discussions | Programmers Discussion Hub",
+  description: "Join programming discussions and solve coding problems",
+};
 const discussions = () => {
   return (
     <div>

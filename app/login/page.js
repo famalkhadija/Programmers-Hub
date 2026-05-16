@@ -6,7 +6,6 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -43,6 +42,11 @@ const Login = () => {
   if (session) {
     return (
       <>
+      <head>
+        <title>Login | Programmers Discussion Hub
+          <meta name="description" content="Login to access programming discussions and features" />
+        </title>
+      </head>
         <div className="mx-auto my-10 md:my-24">
           <div className="text-center">Signed in as {session.user.email} </div>{" "}
           <br />

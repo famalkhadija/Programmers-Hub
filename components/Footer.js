@@ -5,20 +5,20 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 const Footer = () => {
   const pathname = usePathname();
-  // const hideFooter1 = pathname.startsWith("/discussions");
-  // const hideFooter2 = pathname.startsWith("/groups/");
-  // const hideFooter3 = pathname.startsWith("/private/");
-  // const hideFooter4 = pathname.startsWith("/solveQuiz/");
-  // const hideFooter5 = pathname.startsWith("/quiz");
-const showFooter=["/discussions","/groups/","private/","solveQuiz/","/quiz"].includes(pathname)
-  // if (hideFooter1) return null;
-  // if (hideFooter2) return null;
-  // if (hideFooter3) return null;
-  // if (hideFooter4) return null;
-  // if (hideFooter5) return null;
+  const hideFooter1 = pathname.startsWith("/discussions");
+  const hideFooter2 = pathname.startsWith("/groups/");
+  const hideFooter3 = pathname.startsWith("/private/");
+  const hideFooter4 = pathname.startsWith("/solveQuiz/");
+  const hideFooter5 = pathname.startsWith("/quiz");
+// const showFooter=["/discussions","/groups/","private/","solveQuiz/","/quiz"].includes(pathname)
+  if (hideFooter1) return null;
+  if (hideFooter2) return null;
+  if (hideFooter3) return null;
+  if (hideFooter4) return null;
+  if (hideFooter5) return null;
   return (
     <>
-    {showFooter&&
+    
     <footer className="dark:bg-slate-800 dark:text-white text-slate-700  bg-slate-200 py-16 pl-6 sm:pl-12 md:pl-32">
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-20">
         <div className="flex flex-col gap-6">
@@ -90,7 +90,8 @@ const showFooter=["/discussions","/groups/","private/","solveQuiz/","/quiz"].inc
         &copy; {new Date().getFullYear()} Programmers Discussion Hub. All rights
         reserved.
       </div>
-    </footer>}
+    </footer>
+    
     </>
   );
 };
