@@ -357,6 +357,11 @@ export default function GroupPage() {
   }
 
   return (
+    <>
+      <head>  
+        <title>{groupName} Discussion | Programmers Discussion Hub</title>
+        <meta name="description" content={`Join ${groupName} discussions`} />
+      </head>
     <div className=" flex h-full w-full ">
       <StickyBar />
       <div className=" text-black h-[calc(100vh-16vh)] xl:w-[79%] lg:w-[75%] md:w-[70%] w-[calc(100%-43px)]">
@@ -379,7 +384,7 @@ export default function GroupPage() {
         <div className="relative h-full md:text-md text-sm overflow-hidden md:border-none dark:border-l border-blue-500 ">
           <div
             className="absolute inset-0 -z-10 h-full w-full bg-white 
-  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
+            bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
   bg-[size:4rem_3rem]  "
           >
             <div className="absolute inset-0 dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] bg-[radial-gradient(circle_800px_at_0%_200px,#95bdf7,transparent)]"></div>
@@ -471,5 +476,6 @@ export default function GroupPage() {
         </div>
       </div>
     </div>
+                </>
   );
 }
